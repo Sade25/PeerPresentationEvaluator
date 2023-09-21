@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
     render html: "hello, world!"
   end
   def is_admin?
-    current_user.email == "sivilotti.1@osu.edu"
+    current_user.email == "admin.1@osu.edu"
   end
 end
