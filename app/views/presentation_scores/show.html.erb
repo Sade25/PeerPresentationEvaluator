@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @presentation_score %>
+
+<div>
+  <% if is_admin? %>
+    <%= link_to "Back to presentation scores", presentation_scores_path %>
+    <%= button_to "Destroy this presentation score", @presentation_score, method: :delete %>
+  <% end %>
+</div>

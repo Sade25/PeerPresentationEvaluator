@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Presentations</h1>
+
+<div id="presentations">
+  <% @presentations.each do |presentation| %>
+    <%= render presentation %>
+    <p>
+      <%= link_to "Show this presentation", presentation %><br>
+    </p>
+    <hr>
+  <% end %>
+</div>
+
+<%= link_to "New presentation", new_presentation_path %>
+<br>
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% end %>

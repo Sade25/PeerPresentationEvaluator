@@ -1,0 +1,26 @@
+<div id="<%= dom_id presentation_score %>">
+    <% if is_admin? %>
+        <% if presentation_score.student %>
+            Student:
+            <%= presentation_score.student.fname %> <%= presentation_score.student.lname %><br>
+        <% else %>
+        <p class="text-danger">Instructor has deleted student</p>
+        <% end %>
+    <% end %>
+    Comment:
+    <%= presentation_score.comment %><br>
+    Grade:
+    <%= presentation_score.grade %><br>
+    Q1:
+    <%= presentation_score.q1 %><br>
+    Q2:
+    <%= presentation_score.q2 %><br>
+    Q3:
+    <%= presentation_score.q3 %><br>
+    Q4:
+    <%= presentation_score.q4 %><br>
+    <% if is_admin? %>
+        Presentation:
+        <%= link_to Presentation.find(presentation_score.presentation_id).name, presentation_path(Presentation.find(presentation_score.presentation_id)) %><br>
+    <% end %>
+</div>

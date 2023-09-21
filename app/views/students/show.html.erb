@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @student %>
+
+<div>
+  <% if is_admin? %>
+    <%= link_to "Edit this student", edit_student_path(@student) %> |
+    <%= link_to "Back to students", students_path %>
+    <%= button_to "Remove Student", @student, { method: :delete, class: 'btn btn-danger'} %>
+  <% end %>
+</div>

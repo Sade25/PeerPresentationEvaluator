@@ -1,0 +1,11 @@
+<div id="<%= dom_id student %>">
+    <%= student.fname %>
+    <%= student.lname %><br>
+    <%= student.email %>
+    <hr>
+    <h2>Student Evaluations on Your Presentation: </h2>
+    <%= "No Presentations" if student.presentations.empty? %>
+    <% student.presentations.each do |presentation| %>
+        <%= render presentation %>
+    <% end %>
+</div>

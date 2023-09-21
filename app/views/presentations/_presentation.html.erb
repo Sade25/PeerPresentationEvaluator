@@ -1,0 +1,16 @@
+<div id="<%= dom_id presentation %>">
+    <h2><%= presentation.name %></h2>
+    <h3>Students:</h3>
+    <%= "No Students in the Presentation" if presentation.students.empty? %>
+    <% presentation.students.each do |student| %>
+        <br>
+        <%= student.fname %> <%= student.lname %>
+    <% end %>
+    <h3>Scores:</h3>
+    <%= "No Scores in the Presentation" if presentation.presentation_scores.empty? %>
+    <% presentation.presentation_scores.each do |score| %>
+        <br>
+        <%= render score %>
+    <% end %>
+    <%= link_to "Rate this presentation", new_presentation_score_path %>
+</div>
